@@ -29,6 +29,7 @@ button {
   padding: 0;
   border: none;
 
+  font: inherit;
   cursor: pointer;
 }
 
@@ -47,5 +48,11 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+input,
+textarea {
+  font: inherit;
+  color: #2e2f42;
 }
 /* #endregion Reset styles */
