@@ -57,3 +57,26 @@ button:focus {
   margin-top: 32px;
 }
 /* #endregion Gallery styles */
+
+/* #region Toast message */
+.error-toast {
+  max-width: 434px;
+  padding: 20px;
+  border-bottom: 2px solid #ffbebe;
+  border-radius: 4px;
+  background-color: #ef4040;
+
+  letter-spacing: 0.03em;
+  color: #fafafb;
+}
+
+.iziToast > .iziToast-close {
+  background-image: none !important;
+}
+
+.iziToast > .iziToast-close::before {
+  content: '✕';
+  color: white;
+  font-size: 20px;
+}
+/* #endregion Toast message */
