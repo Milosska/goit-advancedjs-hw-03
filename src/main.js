@@ -1,4 +1,10 @@
-import { generateErrorToastMessage } from './js/render-functions';
+import {
+  generateErrorToastMessage,
+  createGallery,
+  clearGallery,
+  showLoader,
+  hideLoader,
+} from './js/render-functions';
 import { getImagesByQuery } from './js/pixabay-api';
 
 const refs = {
@@ -21,6 +27,9 @@ const onSearchSubmit = event => {
     return;
   }
 
+  clearGallery();
+  showLoader();
+
   getImagesByQuery(searchQuery)
     .then(({ data: { hits } }) => {
       if (!hits.length) {
@@ -28,10 +37,10 @@ const onSearchSubmit = event => {
         return;
       }
 
-      console.log(hits);
+      createGallery(hits);
     })
     .catch(error => console.log(error))
-    .finally();
+    .finally(() => hideLoader());
 };
 
 refs.searchForm.addEventListener('submit', onSearchSubmit);
